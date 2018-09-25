@@ -96,11 +96,11 @@ void addLinkedListItemToRear(linkedListNode* list, linkedListNode* item) {
 
 	linkedListNode* copy_of_list = list;        // Create a copy of the list so actions are not destructive.
 
-	while (copy_of_list->getNext() != NULL) {              // Looping until we get to end of list.
+	while (copy_of_list != NULL) {              // Looping until we get to end of list.
 		copy_of_list = copy_of_list->getNext(); // Traverse to the next item in the list.
 	}
 
-	copy_of_list->setNext(item);                        // Set the end of our list to be our new item.
+    copy_of_list = item;                        // Set the end of our list to be our new item.
 }
 
 // Prints out the given linked list.
