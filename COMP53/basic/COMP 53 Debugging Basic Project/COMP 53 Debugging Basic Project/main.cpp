@@ -8,7 +8,6 @@
 using namespace std;
 
 // Initialize our functions here
-void fillArray(int* arr, int length);                                       // Fills array with random numbers
 linkedListNode* arrayToLinkedList(int* arr, int length);                    // Function that turns an array into a linked list.
 void addLinkedListItemToRear(linkedListNode* list, linkedListNode* item);   // Helper function that appends a given item to the end of a given linked list.
 void printLinkedList(linkedListNode* list);                                 // Prints out the given linked list.
@@ -20,7 +19,6 @@ int main() {
     // initializing variables
 	int RANDOM_SEED = 13;
 	int ARRAY_LENGTH = 5;
-	int* arr = NULL;
 	bool result;
 	linkedListNode* list;
     int returnCode = 0;
@@ -28,8 +26,7 @@ int main() {
 
 	cout << "LETTUCE make a linked list from an array!\n\n";
 
-	arr = new int[ARRAY_LENGTH];                    // Create dynamic array.
-	fillArray(arr, ARRAY_LENGTH);                   // Fill array with random numbers.
+    int arr[5] = {12,24,36,48,60};
 
 	list = arrayToLinkedList(arr, ARRAY_LENGTH);    // Convert array to linked list.
 
@@ -55,18 +52,6 @@ int main() {
 	}
     system("pause");
     return returnCode;
-}
-
-// Fills array with random numbers
-void fillArray(int* arr, int length) {
-	cout << "-> fillArray()\n\n";
-    
-    int RAND_LOWER_BOUND = 0;
-    int RAND_UPPER_BOUND = 100;
-
-	for (int i = 0; i < length; i++) {
-		arr[i] = rand() % (RAND_UPPER_BOUND - RAND_LOWER_BOUND) + RAND_LOWER_BOUND;
-	}
 }
 
 // Function that turns an array into a linked list.
